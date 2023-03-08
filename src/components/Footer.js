@@ -1,3 +1,7 @@
 export function Footer() {
-    return <footer></footer>;
+    return (
+        <footer>
+            <p>@shimdevkun</p>
+        </footer>
+    );
 }

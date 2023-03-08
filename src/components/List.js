@@ -4,6 +4,7 @@ export function List() {
     return (
         <>
             <Series />
+            <Series />
         </>
     );
 }
