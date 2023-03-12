@@ -3,10 +3,12 @@ import { faSquarePlus as farSquarePlus } from '@fortawesome/free-regular-svg-ico
 export function Header() {
     return (
         <header>
-            <div className='logo'>Ani-Order</div>
-            <div id='add-series'>
-                <FontAwesomeIcon icon={farSquarePlus} />
+            <div className='center'>
+                <div className='logo'>Ani-Order</div>
             </div>
+            <a id='add-series'>
+                <FontAwesomeIcon icon={farSquarePlus} />
+            </a>
         </header>
     );
 }
