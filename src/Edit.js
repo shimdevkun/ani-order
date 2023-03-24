@@ -1,12 +1,12 @@
 import { Header } from './components/Header';
-import { List } from './components/List';
 import { Footer } from './components/Footer';
+import { SeriesEdit } from './components/SeriesEdit';
 
-export default function Home() {
+export default function Edit() {
     return (
         <>
-            <Header showActions='true' />
-            <List />
+            <Header />
+            <SeriesEdit />
             <Footer />
         </>
     );

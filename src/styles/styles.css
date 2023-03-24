@@ -61,10 +61,29 @@ a:focus {
     cursor: pointer;
 }
 
+button:hover,
+button:focus {
+    cursor: pointer;
+}
+
 button {
     background: none;
     border: none;
     font-size: inherit;
+}
+
+input,
+select {
+    font-size: inherit;
+}
+
+select {
+    width: 7.5em;
+}
+
+input,
+select {
+    padding: 0.5em 0.75em;
 }
 
 .container {
@@ -76,6 +95,27 @@ button {
     display: none;
 }
 
+.field-edit {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-edit + .field-edit {
+    margin-top: 1em;
+}
+
+.field-edit label {
+    margin-bottom: 0.4em;
+}
+
+.field-edit input,
+.field-edit select {
+    border: none;
+    border-radius: 0.2em;
+    background: var(--gray);
+    color: var(--secondary);
+}
+
 /* --- HEADER --- */
 header {
     position: relative;
@@ -85,6 +125,10 @@ header {
     font-size: 1.75rem;
     text-align: center;
     flex: 0 1 auto;
+}
+
+header .logo {
+    text-decoration: none;
 }
 
 header #add-series {
@@ -195,6 +239,77 @@ section#list h2 {
 
 .project .project__main .project-title {
     margin-left: 1em;
+}
+
+/* --- EDIT --- */
+
+section#edit {
+    background: var(--background);
+    color: var(--secondary);
+    padding: 2em 0;
+    flex: 1 1 auto;
+}
+
+section#edit h2,
+section#edit h3 {
+    color: var(--primary);
+}
+
+section#edit .basic-info {
+    display: flex;
+    flex-direction: column;
+}
+
+section#edit h3 {
+    margin: 0.85em 0;
+}
+
+section#edit .edit-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em 0 1.5em;
+    border-top: 1px solid var(--terciary);
+    position: relative;
+}
+
+section#edit .projects .edit-project:nth-last-child(2) {
+    border-bottom: 1px solid var(--terciary);
+}
+
+section#edit .edit-project #delete-project {
+    align-self: flex-end;
+    padding: 0;
+    color: var(--secondary);
+}
+
+section#edit .edit-project #delete-project:hover,
+section#edit .edit-project #delete-project:focus {
+    color: var(--error);
+}
+
+section#edit .projects .btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5em 0;
+}
+
+section#edit button {
+    border-radius: 0.25em;
+}
+
+section#edit button#add-project {
+    padding: 0.65em 1.75em;
+    background: var(--terciary);
+    color: var(--secondary);
+}
+
+section#edit button#edit-series {
+    padding: 0.75em 0;
+    background: var(--secondary);
+    color: var(--white);
+    width: 100%;
+    font-size: 1.15rem;
 }
 
 /* --- FOOTER --- */

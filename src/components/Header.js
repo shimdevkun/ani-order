@@ -1,14 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus as farSquarePlus } from '@fortawesome/free-regular-svg-icons';
-export function Header() {
+import { Link } from 'react-router-dom';
+
+export function Header({ showActions }) {
     return (
         <header>
             <div className='center'>
-                <div className='logo'>Ani-Order</div>
+                <Link to='/' className='logo'>
+                    Ani-Order
+                </Link>
             </div>
-            <a id='add-series'>
-                <FontAwesomeIcon icon={farSquarePlus} />
-            </a>
+            {showActions && (
+                <Link to='/edit' id='add-series'>
+                    <FontAwesomeIcon icon={farSquarePlus} />
+                </Link>
+            )}
         </header>
     );
 }
