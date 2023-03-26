@@ -217,6 +217,11 @@ section#list h2 {
     color: var(--secondary);
 }
 
+.series .series__body .series__info .series-order-source {
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+
 /* --- PROJECT --- */
 
 .project {
@@ -239,6 +244,10 @@ section#list h2 {
 
 .project .project__main .project-title {
     margin-left: 1em;
+}
+
+.project .project__main .project-link {
+    text-decoration: none;
 }
 
 /* --- EDIT --- */

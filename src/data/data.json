@@ -1,0 +1,63 @@
+[
+    {
+        "id": "100",
+        "seriesName": "D4DJ",
+        "orderSource": "https://anilist.co/home",
+        "projects": [
+            {
+                "projectName": "D4DJ First Mix",
+                "link": "https://anilist.co/anime/115069/D4DJ-First-Mix/",
+                "format": "TV"
+            },
+            {
+                "projectName": "D4DJ Double Mix",
+                "link": "https://anilist.co/anime/146321/D4DJ-Double-Mix/",
+                "format": "OVA"
+            },
+            {
+                "projectName": "D4DJ All Mix",
+                "link": "https://anilist.co/anime/147216/D4DJ-All-Mix/",
+                "format": "TV"
+            }
+        ]
+    },
+    {
+        "id": "101",
+        "seriesName": "The Quintessential Quintuplets ",
+        "orderSource": "https://anilist.co/home",
+        "projects": [
+            {
+                "projectName": "The Quintessential Quintuplets",
+                "link": "https://anilist.co/anime/103572/The-Quintessential-Quintuplets/",
+                "format": "TV"
+            },
+            {
+                "projectName": "The Quintessential Quintuplets 2",
+                "link": "https://anilist.co/anime/109261/The-Quintessential-Quintuplets-2/",
+                "format": "TV"
+            },
+            {
+                "projectName": "The Quintessential Quintuplets Movie ",
+                "link": "https://anilist.co/anime/131520/The-Quintessential-Quintuplets-Movie/",
+                "format": "Movie"
+            }
+        ]
+    },
+    {
+        "id": "102",
+        "seriesName": "Madoka",
+        "orderSource": "https://anilist.co/home",
+        "projects": [
+            {
+                "projectName": "Puella Magi Madoka Magica ",
+                "link": "https://anilist.co/anime/9756/Puella-Magi-Madoka-Magica/",
+                "format": "TV"
+            },
+            {
+                "projectName": "Puella Magi Madoka Magica the Movie Part III: Rebellion",
+                "link": "https://anilist.co/anime/11981/Puella-Magi-Madoka-Magica-the-Movie-Part-III-Rebellion/",
+                "format": "Movie"
+            }
+        ]
+    }
+]

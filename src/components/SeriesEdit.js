@@ -2,25 +2,22 @@ import { ProjectEdit } from './ProjectEdit';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export function SeriesEdit() {
+export function SeriesEdit({ seriesToEdit }) {
     const navigate = useNavigate();
 
-    const [series, setSeries] = useState({
-        seriesName: '',
-        orderSource: '',
-        projects: [
-            {
-                projectName: '',
-                link: '',
-                format: '',
-            },
-            {
-                projectName: "Anime series' goes here",
-                link: 'www.google.com',
-                format: 'TV',
-            },
-        ],
-    });
+    const [series, setSeries] = useState(
+        seriesToEdit || {
+            seriesName: '',
+            orderSource: '',
+            projects: [
+                {
+                    projectName: '',
+                    link: '',
+                    format: '',
+                },
+            ],
+        }
+    );
 
     function handleChange(event) {
         const { name, value } = event.target;
