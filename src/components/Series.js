@@ -71,7 +71,7 @@ export function Series({ series }) {
                             size='2xs'
                         />
                     </a>
-                    <Link to='/edit' className='edit-series'>
+                    <Link to={'/edit/' + series.id} className='edit-series'>
                         <FontAwesomeIcon icon={faPenToSquare} />
                     </Link>
                 </div>
