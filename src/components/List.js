@@ -5,11 +5,13 @@ export function List() {
     const [allSeries, setAllSeries] = useState([]);
 
     useEffect(() => {
-        fetch('https://api.npoint.io/880057e1e7ba67d2c1f6')
+        fetch(process.env.REACT_APP_API_BASE_URL + '/series')
             .then((response) => response.json())
-            .then((data) => setAllSeries(data))
+            .then((data) => {
+                setAllSeries(data);
+            })
             .catch((err) => console.error(err));
-    });
+    }, []);
 
     return (
         <section id='list'>

@@ -1,23 +1,35 @@
 import { ProjectEdit } from './ProjectEdit';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { useParams } from 'react-router-dom';
 
 export function SeriesEdit({ seriesToEdit }) {
     const navigate = useNavigate();
+    const { seriesId } = useParams();
+    const [series, setSeries] = useState({
+        id: '',
+        seriesName: '',
+        orderSource: '',
+        projects: [
+            {
+                projectName: '',
+                link: '',
+                format: '',
+            },
+        ],
+    });
 
-    const [series, setSeries] = useState(
-        seriesToEdit || {
-            seriesName: '',
-            orderSource: '',
-            projects: [
-                {
-                    projectName: '',
-                    link: '',
-                    format: '',
-                },
-            ],
+    useEffect(() => {
+        if (seriesId) {
+            fetch(process.env.REACT_APP_API_BASE_URL + '/series/' + seriesId)
+                .then((response) => response.json())
+                .then((data) => {
+                    setSeries(data);
+                })
+                .catch((err) => console.error(err));
         }
-    );
+    }, [seriesId]);
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -74,7 +86,26 @@ export function SeriesEdit({ seriesToEdit }) {
         }));
     }
 
-    function editSeries() {
+    async function editSeries() {
+        //let updatedSeries = data;
+        const postUrl = process.env.REACT_APP_API_BASE_URL + '/series';
+        if (seriesId) {
+            await fetch(postUrl + '/' + seriesId, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(series),
+            });
+        } else {
+            await fetch(postUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(series),
+            });
+        }
         navigate('/');
     }
 
@@ -85,19 +116,21 @@ export function SeriesEdit({ seriesToEdit }) {
                 <div className='basic-info'>
                     <h3>Basic Info</h3>
                     <div className='field-edit'>
-                        <label htmlFor='series-name'>Name</label>
+                        <label htmlFor='seriesName'>Name</label>
                         <input
-                            name='series-name'
+                            name='seriesName'
                             type='text'
+                            value={series.seriesName}
                             onChange={handleChange}
                         />
                     </div>
 
                     <div className='field-edit'>
-                        <label htmlFor='order-source'>Source</label>
+                        <label htmlFor='orderSource'>Source</label>
                         <input
-                            name='order-source'
+                            name='orderSource'
                             type='text'
+                            value={series.orderSource}
                             onChange={handleChange}
                         />
                     </div>
